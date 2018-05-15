@@ -11,15 +11,15 @@ then
   read -p "RHN Username:" name
   read -s -p "RHN password (doesn't echo):" password ; echo
   read -p "Subscritpion pool id:" pool_id
-  reap -p "What is your Org Name:" org
-  reap -p "What is your Location:" location
-  reap -p "What admin username would you like for Satellite:" satuser
-  reap -s -p "What admin password would you like for Satellite(doesn't echo):" satpasswd ; echo
-  reap -p "Which interface are you using for Satellite:" interface
-  reap -p "What is your Satellite Hostname:" sathost
-  reap -p "Is this the first time you are setting up your Satellite? (y/n)" initalize
-  reap -p "Do you want to setup Satellite? (y/n)" satinstall
-  reap -p "Do you want to initalize an export? (y/n)" initexport
+  read -p "What is your Org Name:" org
+  read -p "What is your Location:" location
+  read -p "What admin username would you like for Satellite:" satuser
+  read -s -p "What admin password would you like for Satellite(doesn't echo):" satpasswd ; echo
+  read -p "Which interface are you using for Satellite:" interface
+  read -p "What is your Satellite Hostname:" sathost
+  read -p "Is this the first time you are setting up your Satellite? (y/n)" initalize
+  read -p "Do you want to setup Satellite? (y/n)" satinstall
+  read -p "Do you want to initalize an export? (y/n)" initexport
 fi
 ########################################################
 # Enter these values if you want to skip the questions #
