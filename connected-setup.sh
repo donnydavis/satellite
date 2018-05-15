@@ -1,12 +1,11 @@
 #!/bin/bash
-export initalize=y
-export satinstall=y
-export initexport=y
+#Set this value to y if you have already setup your exports
+export skipinquisition=n
 
-echo "#########################################"
-echo "#    Export Variables for the install   #"
-echo "#########################################"
-read -p "Skip questions and use export variables? (y/n)" skipinquisition
+if [[ $skipinquisition =~ ^[Yy]$ ]]
+then
+  read -p "Skip questions and use export variables? (y/n)" skipinquisition
+fi
 if [[ $skipinquisition =~ ^[Nn]$ ]]
 then
   read -p "RHN Username:" name
@@ -18,6 +17,9 @@ then
   reap -s -p "What admin password would you like for Satellite(doesn't echo):" satpasswd ; echo
   reap -p "Which interface are you using for Satellite:" interface
   reap -p "What is your Satellite Hostname:" sathost
+  reap -p "Is this the first time you are setting up your Satellite? (y/n)" initalize
+  reap -p "Do you want to setup Satellite? (y/n)" satinstall
+  reap -p "Do you want to initalize an export? (y/n)" initexport
 fi
 ########################################################
 # Enter these values if you want to skip the questions #
@@ -33,6 +35,9 @@ then
   export satpasswd=admin
   export interface=eth0
   export sathost=satellite.lab.local
+  export initalize=y
+  export satinstall=y
+  export initexport=y
 fi
 if [[ $initalize =~ ^[Yy]$ ]]
 then
