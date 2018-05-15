@@ -1,3 +1,4 @@
+#!/bin/bash
 export initalize=y
 export satinstall=y
 export initexport=y
