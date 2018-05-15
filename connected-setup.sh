@@ -2,7 +2,7 @@
 #Set this value to y if you have already setup your exports
 export skipinquisition=n
 
-if [[ $skipinquisition =~ ^[Yy]$ ]]
+if [[ $skipinquisition =~ ^[Nn]$ ]]
 then
   read -p "Skip questions and use export variables? (y/n)" skipinquisition
 fi
